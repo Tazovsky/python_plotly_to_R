@@ -4,6 +4,33 @@ Making waterfall chart in pure `R` `plotly` package is breakingneck challenge co
 
 ## Example
 
+From `python` code:
+
+```python
+import plotly.offline as py
+import plotly.graph_objs as go
+py.init_notebook_mode(connected = False)
+
+trace = go.Waterfall(
+    name = "20", orientation = "v", 
+    measure = ["relative", "relative", "total", "relative", "relative", "total"], 
+    x = ["Sales", "Consulting", "Net revenue", "Purchases", "Other expenses", "Profit before tax"], 
+    textposition = "outside", 
+    text = ["+60", "+80", "", "-40", "-20", "Total"], 
+    y = [60, 80, 0, -40, -20, 0], 
+    connector = {"line":{"color":"rgb(63, 63, 63)"}}, 
+)
+
+layout = go.Layout(
+        title = "Profit and loss statement 2018", 
+        showlegend = True
+)
+
+py.iplot(go.Figure([trace], layout), filename = "basic_waterfall_chart")
+```
+
+To `R` implementation:
+
 ```r
 library(reticulate)
 py <- import("plotly.offline")

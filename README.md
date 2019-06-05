@@ -54,7 +54,7 @@ layout = go$Layout(
 
 fig <- go$Figure(list(trace), layout)
 
-py$plot(fig, output_type = output_type)
+py$plot(fig, output_type = "file") # or "div" wrapped in HTML function for shiny app 
 ```
 
 To see example implementation in `Shiny` app see file `profit_and_loss_statement_2018_shiny_app.R`.
